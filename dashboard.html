@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const firsName = document.getElementById('email').value
+const secondName = document.getElementById('password').value
+
+
+ 
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+ import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.1/firebase/database";
+ 
+ const firebaseConfig = {
+   apiKey: "AIzaSyDQQqYwY6cvh0zk1KoC_dM3xMZoyLzMrLU",
+   authDomain: "livecoding-march.firebaseapp.com",
+   projectId: "livecoding-march",
+   storageBucket: "livecoding-march.appspot.com",
+   messagingSenderId: "129620676435",
+   appId: "1:129620676435:web:441e0f271a9cb65a4f9ba6"
+ };
+
+ // Initialize Firebase
+ const app = initializeApp(firebaseConfig);
+ const database = getDatabase(app);
+    </script>
+</body>
+</html>

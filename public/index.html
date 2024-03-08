@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>livecodind</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body class="bg-black">
+  <h1 class="text-light" style="text-align: center;">WELCOME TO SCHOOL PORTAL</h1>
+  <div class="mx-auto m-4">
+    <input class="form-control w-50 mx-auto" type="text" placeholder="Email" id="email">
+    <input class="form-control w-50 mx-auto m-2" type="password" placeholder="Password" id="password">
+    <button class="btn btn-danger w-50" onclick="login()" style="margin-left: 320px;">Log in</button>
+  </div>
+
+
+  <script>
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getAuth, isSignInWithEmailLink, sendSignInLinkToEmail,linkWithCredential, EmailAuthProvider } from "https://www.gstatic.com/firebasejs/10.8.1/firebase/auth";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDQQqYwY6cvh0zk1KoC_dM3xMZoyLzMrLU",
+      authDomain: "livecoding-march.firebaseapp.com",
+      projectId: "livecoding-march",
+      storageBucket: "livecoding-march.appspot.com",
+      messagingSenderId: "129620676435",
+      appId: "1:129620676435:web:441e0f271a9cb65a4f9ba6"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const getAuth = getAuth(app);
+
+function login() {
+    if (isSignInWithEmailLink(auth, window.location.href)) {
+
+      let email = window.localStorage.getItem('emailForSignIn');
+      if (!email) {
+
+        email = window.prompt('Please provide your email for confirmation');
+      }
+    }
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+      .then(() => {
+
+        window.location.href = dashboard.html
+
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+      });
+}
+  </script>
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
